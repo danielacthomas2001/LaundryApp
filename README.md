@@ -10,3 +10,10 @@
 - **Payment Integration**: Pay for laundry using various payment methods (e.g., card, digital wallets).
 - **Notifications**: Receive notifications when laundry is done or if the machine has issues.
 - **Maintenance Requests**: Easily report machine problems to building management.
+
+## Running Front End
+
+- Install React and Node.js in terminal
+- Run: [npm create-react-app laundry-app] in terminal
+- Replace all files in src folder with files in frontend-dashboard
+- Run: [npm start] in terminal 
