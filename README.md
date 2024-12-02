@@ -14,6 +14,6 @@
 ## Running Front End
 
 - Install React and Node.js in terminal
-- Run: [npm create-react-app laundry-app] in terminal
+- Run: [npx create-react-app laundry-app] in terminal
 - Replace all files in src folder with files in frontend-dashboard
 - Run: [npm start] in terminal 
