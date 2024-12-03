@@ -5,11 +5,21 @@ import ReportIssuePopup from './ReportIssuePopup';
 import ReservationPopup from './ReservationPopup';
 import './App.css';
 
+// connection part
+import axios from 'axios';
+
 function App() {
   const [isAccountOpen, setAccountOpen] = useState(false);
   const [isReportOpen, setReportOpen] = useState(false);
   const [selectedMachine, setSelectedMachine] = useState(null);  
   const [isReservationOpen, setReservationOpen] = useState(false);
+
+  // test api call to the server
+  const apiCall = () => {
+    axios.get('http://localhost:8080').then(() => {
+      console.log('woo!')
+    })
+  }
 
   const toggleAccountPopup = () => {
     setAccountOpen(!isAccountOpen);

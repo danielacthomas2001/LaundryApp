@@ -17,3 +17,18 @@
 - Run: [npx create-react-app laundry-app] in terminal
 - Replace all files in src folder with files in frontend-dashboard
 - Run: [npm start] in terminal 
+
+
+## Running database connection
+- Ive added a folder called server, it hosts the express api app along with dependencies
+- Inside LaundryApp/server directory
+    - Run `npm init` to initiate node.js app
+        - Use all default settings (keeping hitting enter)
+
+### Pretty sure dont need the following as they are all in dependencies, but here just in case
+- Inside LaundryApp/server directory
+    - Install express `npm install express`
+    - Install cors `npm install cors`
+    - Install mysql `npm install mysql`
+- Inside LaundryApp/laudry-app directory
+    - Install axios `npm install axios`
