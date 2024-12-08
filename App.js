@@ -69,9 +69,11 @@ function App() {
 
   // Mock machine data
   const [machines, setMachines] = useState([
-    { id: 1, status: 'available', price: 2.00},
-    { id: 2, status: 'in-use', price: 2.25 },
-    { id: 3, status: 'reserved', price: 2.00 }
+    { id: 1, status: 'available', price: 2.55},
+    { id: 2, status: 'in-use', price: 2.55},
+    { id: 3, status: 'reserved', price: 2.55},
+    { id: 4, status: 'available', price: 2.55 },
+    { id: 5, status: 'available', price: 2.55 }
   ]);
 
   const getStatusColor = (status) => {
@@ -123,11 +125,14 @@ function App() {
           <h3>Machine {selectedMachine}</h3>
             <p>Status: {machines[selectedMachine-1].status}
             </p>
+            {machines[selectedMachine-1].status == 'available' && (
+              <div className ="payment-info-toggle">
+                <p>Price: ${machines[selectedMachine-1].price}</p>
+                <button onClick={() => handlePayment(selectedMachine)}>Pay for Load</button>
+              </div>
+            )}
             <button onClick={toggleReservationPopup}>Reserve for Later</button>
             <button onClick={toggleReportPopup}>Report Issue</button>
-            {machines[selectedMachine-1].status == 'available' && (
-              <button onClick={() => handlePayment(selectedMachine)}>Pay for Load</button>
-            )}
             {isReportOpen && (
               <ReportIssuePopup
               userData={userData}
