@@ -12,7 +12,9 @@ function App() {
   const [isAccountOpen, setAccountOpen] = useState(false);
   const [isReportOpen, setReportOpen] = useState(false);
   const [selectedMachine, setSelectedMachine] = useState(null);  
-  const [isReservationOpen, setReservationOpen] = useState(false);
+  const [isReservationOpen, setReservationOpen] = useState(false);  
+  const [reservations, setReservations] = useState([]);
+
 
   // test api call to the server
   const apiCall = () => {
@@ -48,9 +50,8 @@ function App() {
   };
 
   const handleReservation = (machineId, reservationTime) => {
-    console.log(`Machine ${machineId} reserved for ${reservationTime}`);
-    changeMachineStatus(machineId, 'reserved');
-    //Send reservation to the server here
+    addReservation(machineId, reservationTime);
+    setReservationOpen(false); // Close the reservation popup
   };
 
   const handlePayment = (machineId) => {
@@ -84,6 +85,16 @@ function App() {
       default:
         return 'gray';
     }
+  };
+
+  const addReservation = (machineId, reservationTime) => {
+    const newReservation = {
+      machineId,
+      time: reservationTime,
+      id: Date.now()
+    };
+    setReservations(prevReservations => [...prevReservations, newReservation]);
+    console.log(`Reservation added for Machine ${machineId} at ${reservationTime}`);
   };
 
   return (
@@ -140,12 +151,12 @@ function App() {
 
       {isReservationOpen && (
         <ReservationPopup
-          userData={userData}
           machineId={selectedMachine}
           handleClose={toggleReservationPopup}
           onReserve={handleReservation}
         />
       )}
+            
     </div>
   );
 }
