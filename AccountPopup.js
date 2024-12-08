@@ -3,7 +3,7 @@ import Popup from './Popup';
 import PaymentPopup from './PaymentPopup';
 import './AccountPopup.css';
 
-const AccountPopup = ({ userData, setUserData, handleClose }) => {
+const AccountPopup = ({ userData, setUserData, handleClose, reservations}) => {
   const [editedData, setEditedData] = useState({ ...userData });
   const [isPaymentPopupOpen, setPaymentPopupOpen] = useState(false);
 
@@ -67,6 +67,22 @@ const AccountPopup = ({ userData, setUserData, handleClose }) => {
               placeholder="Email"
             />
           </div>
+
+          <div className="reservations-section">
+            <h3>Your Reservations</h3>
+            {reservations.length > 0 ? (
+              <ul>
+                {reservations.map(reservation => (
+                  <li key={reservation.id}>
+                    Machine {reservation.machineId} reserved for {reservation.time}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No reservations yet.</p>
+            )}
+          </div>
+          
           <div className="button-group">
             <button onClick={handleSave}>Save Changes</button>
             <button onClick={togglePaymentPopup}>Payment Info</button>
