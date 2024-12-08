@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Popup from './Popup';
 import './ReservationPopup.css';
 
-const ReservationPopup = ({ userData, machineId, handleClose, onReserve }) => {
+const ReservationPopup = ({machineId, handleClose, onReserve }) => {
   const [reservationTime, setReservationTime] = useState('');
 
   const handleReserve = () => {
     if (reservationTime) {
       onReserve(machineId, reservationTime);
+      alert('Reservation Made Successfully!');
       handleClose();
     } else {
       alert('Please select a reservation time.');
