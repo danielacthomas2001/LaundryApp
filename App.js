@@ -53,6 +53,11 @@ function App() {
     //Send reservation to the server here
   };
 
+  const handlePayment = (machineId) => {
+    alert('Payment Made Successfully!');
+    changeMachineStatus(machineId, 'in-use')
+  };
+
   // Mock user data
   const [userData, setUserData] = useState({
     firstName: 'John',
@@ -110,7 +115,7 @@ function App() {
             <button onClick={toggleReservationPopup}>Reserve for Later</button>
             <button onClick={toggleReportPopup}>Report Issue</button>
             {machines[selectedMachine-1].status == 'available' && (
-              <button>Pay for Load</button>
+              <button onClick={() => handlePayment(selectedMachine)}>Pay for Load</button>
             )}
             {isReportOpen && (
               <ReportIssuePopup
