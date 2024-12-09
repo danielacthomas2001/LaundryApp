@@ -9,11 +9,11 @@ const AccountPopup = ({ userData, setUserData, handleClose, reservations}) => {
   const [isPaymentPopupOpen, setPaymentPopupOpen] = useState(false);
 
   const [paymentData, setPaymentData] = useState({
-    cardNumber: '**** **** **** 1234',
-    cardHolder: 'John Doe',
-    expiryDate: '12/25',
-    cvv: '***',
-    billingAddress: '123 Main St, Anytown, AN 12345'
+    cardNumber: '',
+    cardHolder: '',
+    expiryDate: '',
+    cvv: '',
+    billingAddress: ''
   });
 
   const handleChange = (e) => {

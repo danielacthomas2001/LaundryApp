@@ -43,7 +43,7 @@ const ReportIssuePopup = ({ userData, handleClose, selectedMachine }) => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="submit-button">Submit Report</button>
+            <button type="submit" className="submit-button" onClick={handleSubmit}>Submit Report</button>
           </form>
         </div>
       }
