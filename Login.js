@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+//These Imports Are Key
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './Login.css';
 import Home from './Home';
@@ -128,7 +129,8 @@ function Login() {
             {errors.repeatPassword && <span className="error">{errors.repeatPassword}</span>}
           </div>
         )}
-
+           
+        //These are the navigational buttons
         <button type="submit">{isLogin ?  <li><Link to="/">Login</Link></li> : <li><Link to="/home">Submit</Link></li>}</button>
 
       </form>
