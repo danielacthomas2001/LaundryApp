@@ -1,4 +1,6 @@
 .App {
+
+  margin-top: 25px;
   text-align: center;
 }
 
@@ -26,6 +28,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.li {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 @keyframes App-logo-spin {

@@ -88,7 +88,8 @@ const AccountPopup = ({ userData, setUserData, handleClose, reservations}) => {
             <button onClick={togglePaymentPopup}>Payment Info</button>
           </div>
 
-          <li><Link to="/login">Log Out</Link></li>
+          <Link className={"link-styles"} to="/login"> <button>Log Out</button></Link>
+
           
           {isPaymentPopupOpen && (
             <PaymentPopup

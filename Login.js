@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//These Imports Are Key
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './Login.css';
 import Home from './Home';
@@ -129,9 +128,8 @@ function Login() {
             {errors.repeatPassword && <span className="error">{errors.repeatPassword}</span>}
           </div>
         )}
-           
-        //These are the navigational buttons
-        <button type="submit">{isLogin ?  <li><Link to="/">Login</Link></li> : <li><Link to="/home">Submit</Link></li>}</button>
+
+        <button type="submit">{isLogin ?  <Link  className={"link-styles"} to="/">Login</Link> : <Link className={"link-styles"} to="/home">Submit</Link>}</button>
 
       </form>
       <button className="toggle-button" onClick={toggleForm}>

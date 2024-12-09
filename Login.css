@@ -1,6 +1,7 @@
 .auth-container {
     max-width: 300px;
     margin: 0 auto;
+    margin-top: 25px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -54,9 +55,10 @@
   
   .link-button {
     background: none;
+    padding: 8px;
     border: none;
     color: #0000FF;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     cursor: pointer;
     font-size: 14px;
     margin-bottom: 10px;
@@ -64,6 +66,11 @@
   
   .link-button:hover {
     color: #4a148c;
+  }
+
+  .link-styles {
+    text-decoration: none;
+    color: white;
   }
 
 .ul {
