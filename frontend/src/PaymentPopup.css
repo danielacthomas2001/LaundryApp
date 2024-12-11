@@ -1,0 +1,42 @@
+.payment-popup {
+    width: 350px;
+  }
+  
+  .view-payment-info p {
+    margin-bottom: 10px;
+  }
+  
+  .edit-payment-info input,
+  .edit-payment-info textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .edit-payment-info textarea {
+    height: 60px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button-group button,
+  .view-payment-info button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .button-group button:hover,
+  .view-payment-info button:hover {
+    background-color: #0056b3;
+  }
